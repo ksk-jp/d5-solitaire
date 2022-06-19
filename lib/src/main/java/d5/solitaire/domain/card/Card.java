@@ -5,10 +5,14 @@ public class Card {
   private Number number;
   private Side side;
 
-  public Card(Mark mark, Number number, Side side) {
+  private Card(Mark mark, Number number, Side side) {
     this.mark = mark;
     this.number = number;
     this.side = side;
+  }
+
+  public static Card of(Mark mark, Number number, Side side) {
+    return new Card(mark, number, side);
   }
 
   public Mark getMark() {
@@ -25,6 +29,20 @@ public class Card {
 
   public void open() {
     this.side = Side.FRONT;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (obj instanceof Card) {
+      Card card = (Card) obj;
+      return this.mark.equals(card.getMark())
+          && this.number.equals(card.getNumber())
+          && this.side.equals(card.getSide());
+    }
+    return false;
   }
 
 }
