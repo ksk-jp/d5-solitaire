@@ -9,3 +9,5 @@ build
 .settings
 .classpath
 bin
+# vscode
+.vscode/*
