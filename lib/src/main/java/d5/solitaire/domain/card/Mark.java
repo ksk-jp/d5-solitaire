@@ -18,4 +18,8 @@ public enum Mark {
   public String getName() {
     return name;
   }
+
+  public boolean isReverseColor(Mark other) {
+    return this.color.isReverseColor(other.color);
+  }
 }
