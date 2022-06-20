@@ -54,6 +54,7 @@ public class Kumifuda {
     return false;
   }
 
+  // XXX: voidでも良いか？
   public Kumifuda append(Card card) {
     if (!this.isAppendable(card)) {
       // TODO: 本当はメッセージ出力したい
@@ -70,7 +71,7 @@ public class Kumifuda {
     return this.cards.last();
   }
 
-  // なんか一貫性がないmoveとかselectとか
+  // FIXME: なんか一貫性がないmoveとかselectとか
   public Card removeLast() {
     var removedCard = selectableCard();
     if (removedCard == null) {
