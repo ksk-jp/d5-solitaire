@@ -1,7 +1,5 @@
 package d5.solitaire.domain.board;
 
-import com.google.common.annotations.VisibleForTesting;
-
 import d5.solitaire.domain.card.Card;
 import d5.solitaire.domain.card.Number;
 import d5.solitaire.domain.card.Side;

@@ -31,6 +31,10 @@ public class Card {
     this.side = Side.FRONT;
   }
 
+  public void close() {
+    this.side = Side.BACK;
+  }
+
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {
