@@ -1,5 +1,7 @@
 package d5.solitaire.domain.card;
 
+import io.vavr.collection.List;
+
 public enum Mark {
   SPADE(Color.BLACK, "♠"), HEART(Color.RED, "♡"), DIAMOND(Color.RED, "♢"), CLUB(Color.BLACK, "♣");
 
@@ -9,6 +11,10 @@ public enum Mark {
   private Mark(Color color, String name) {
     this.color = color;
     this.name = name;
+  }
+
+  protected static List<Mark> all() {
+    return List.of(SPADE, HEART, DIAMOND, CLUB);
   }
 
   public Color getColor() {

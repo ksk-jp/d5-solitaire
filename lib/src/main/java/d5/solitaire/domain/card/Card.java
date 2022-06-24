@@ -1,5 +1,7 @@
 package d5.solitaire.domain.card;
 
+import io.vavr.collection.List;
+
 public class Card {
   private Mark mark;
   private Number number;
@@ -9,6 +11,11 @@ public class Card {
     this.mark = mark;
     this.number = number;
     this.side = side;
+  }
+
+  public static List<Card> all() {
+    // 全カードを裏の状態で返す
+    return Number.all().flatMap(num -> Mark.all().map(mark -> Card.of(mark, num, Side.BACK)));
   }
 
   public static Card of(Mark mark, Number number, Side side) {
